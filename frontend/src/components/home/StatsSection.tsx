@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Users, GraduationCap, CalendarDays, UserCheck } from "lucide-react";
-import { API_BASE_URL } from "@/config/api";
 import { useNavigate } from "react-router-dom";
 
 interface Stats {
@@ -26,7 +25,7 @@ export const StatsSection = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/public/stats`);
+      const res = await fetch("/public/stats");
       if (!res.ok) throw new Error("Failed to fetch stats");
 
       const data = await res.json();

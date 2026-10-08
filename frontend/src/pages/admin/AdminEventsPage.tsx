@@ -3,8 +3,6 @@ import AdminEventModal from "@/components/admin/AdminEventModal"
 import { Layout } from "@/components/layout/Layout"
 import AdminLayout from "./AdminLayout"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 interface Event {
   id:number
   eventName:string
@@ -25,7 +23,7 @@ async function loadEvents(){
 
 try{
 
-const res = await fetch(`${API_BASE}/api/events`)
+const res = await fetch(`/api/events`)
 
 if(!res.ok) return
 
@@ -47,7 +45,7 @@ setLoading(false)
 
 async function handleDelete(id:number){
 
-await fetch(`${API_BASE}/api/admin/events/${id}`,{
+await fetch(`/api/admin/events/${id}`,{
 method:"DELETE",
 credentials:"include"
 })

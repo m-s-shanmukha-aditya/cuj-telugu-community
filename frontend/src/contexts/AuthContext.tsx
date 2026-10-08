@@ -1,8 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 interface AuthContextType {
   user: any
   isAuthenticated: boolean
@@ -24,7 +22,7 @@ export function AuthProvider({ children }: any) {
 
     try{
 
-      const res = await fetch(`${API_BASE}/api/users/me`,{
+      const res = await fetch(`/api/users/me`,{
         credentials:"include"
       })
 
@@ -63,7 +61,7 @@ export function AuthProvider({ children }: any) {
   async function logout(){
 
   try{
-    await fetch(`${API_BASE}/logout`,{
+    await fetch(`/logout`,{
       method:"POST",
       credentials:"include"
     })

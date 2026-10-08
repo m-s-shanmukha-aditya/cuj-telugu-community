@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://msaditya1510-cujtelugucommunity.hf.space/api/:path*"
+    },
+    {
+      "source": "/auth/:path*",
+      "destination": "https://msaditya1510-cujtelugucommunity.hf.space/auth/:path*"
+    },
+    {
+      "source": "/public/:path*",
+      "destination": "https://msaditya1510-cujtelugucommunity.hf.space/public/:path*"
+    },
+    {
+      "source": "/login",
+      "destination": "https://msaditya1510-cujtelugucommunity.hf.space/login"
+    },
+    {
+      "source": "/logout",
+      "destination": "https://msaditya1510-cujtelugucommunity.hf.space/logout"
+    }
+  ]
+}

@@ -13,8 +13,6 @@ Instagram,
 Globe
 } from "lucide-react"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 export default function ProfilePage(){
     
 
@@ -29,7 +27,7 @@ document.title = `${profile.name} | CUJ Telugu Community`
 },[profile])
 async function fetchProfile(){
 
-const res = await fetch(`${API_BASE}/api/contact-cards/profile/${id}`,{
+const res = await fetch(`/api/contact-cards/profile/${id}`,{
 credentials:"include"
 })
 

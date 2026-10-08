@@ -9,8 +9,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { useAuth } from "@/contexts/AuthContext"
 import { toast } from "sonner"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 export default function EditProfilePage(){
 
 const { user,loadUser } = useAuth()
@@ -193,7 +191,7 @@ alumniAchievements:form.alumniAchievements
 
 }
 
-const res=await fetch(`${API_BASE}/api/users/me`,{
+const res=await fetch(`/api/users/me`,{
 method:"PUT",
 credentials:"include",
 headers:{ "Content-Type":"application/json" },
@@ -207,7 +205,7 @@ if(photo){
 const fd=new FormData()
 fd.append("file",photo)
 
-await fetch(`${API_BASE}/api/users/me/photo`,{
+await fetch(`/api/users/me/photo`,{
 method:"PUT",
 credentials:"include",
 body:fd

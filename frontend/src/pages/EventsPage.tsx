@@ -9,8 +9,6 @@ export default function EventsPage() {
   useEffect(()=>{
 document.title="Events | CUJ Telugu Community"
 },[])
-  const API_BASE = import.meta.env.VITE_API_URL
-
   const [events, setEvents] = useState<Event[]>([])
   const [activeTab, setActiveTab] = useState("UPCOMING")
   const [loading, setLoading] = useState(true)
@@ -31,7 +29,7 @@ document.title="Events | CUJ Telugu Community"
           : "/api/events/past"
 
       const res = await fetch(
-        `${API_BASE}${endpoint}`,
+        endpoint,
         { credentials: "include" }
       )
 

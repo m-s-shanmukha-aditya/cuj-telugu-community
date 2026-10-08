@@ -16,7 +16,6 @@
 //   Users
 // } from "lucide-react"
 
-// const API_BASE = import.meta.env.VITE_API_URL
 
 // interface UserCard {
 //   id: number
@@ -62,7 +61,7 @@
 //     setError(null)
     
 //     try {
-//       let url = `${API_BASE}/api/contact-cards/search`
+//       let url = `/api/contact-cards/search`
 //       const params = new URLSearchParams()
 
 //       if (name) params.append("name", name)
@@ -342,8 +341,6 @@ import {
   Users
 } from "lucide-react"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 interface UserCard {
   id: number
   name: string
@@ -409,7 +406,7 @@ useEffect(() => {
     setError(null)
     
     try {
-      let url = `${API_BASE}/api/contact-cards/search`
+      let url = `/api/contact-cards/search`
       const params = new URLSearchParams()
 
       if (name) params.append("name", name)

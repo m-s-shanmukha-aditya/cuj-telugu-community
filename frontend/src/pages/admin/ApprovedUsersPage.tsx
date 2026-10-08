@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 import AdminLayout from "./AdminLayout"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 interface User {
   id: number
   username: string
@@ -31,7 +29,7 @@ try{
 setLoading(true)
 
 const res = await fetch(
-`${API_BASE}/api/admin/users/approved?page=${page}&size=10`,
+`/api/admin/users/approved?page=${page}&size=10`,
 {
 credentials:"include"
 }

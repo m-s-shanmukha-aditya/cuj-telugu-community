@@ -5,8 +5,6 @@
  * Expected response: { links: [{ platform, url, label }] } or [{ platform, url, label }]
  */
 
-import { API_BASE_URL } from './api';
-
 export interface SocialLink {
   platform: 'instagram' | 'youtube' | 'linkedin' | 'twitter' | 'facebook' | 'whatsapp';
   url: string;
@@ -30,7 +28,7 @@ let cachedSocialLinks: SocialLink[] | null = null;
 export async function fetchSocialLinks(): Promise<SocialLink[]> {
   if (cachedSocialLinks) return cachedSocialLinks;
   try {
-    const response = await fetch(`${API_BASE_URL}/api/site/social-links`);
+    const response = await fetch('/api/site/social-links');
     if (response.ok) {
       const data = await response.json();
       const links = Array.isArray(data) ? data : (data?.links ?? []);

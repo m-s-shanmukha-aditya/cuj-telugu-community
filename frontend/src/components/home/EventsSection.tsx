@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Calendar, MapPin, Clock, X } from "lucide-react"
-import { API_BASE_URL } from "@/config/api"
 
 interface Event {
   id: number
@@ -24,7 +23,7 @@ export const EventsSection = () => {
 
     try {
 
-      const res = await fetch(`${API_BASE_URL}/api/events/upcoming`)
+      const res = await fetch("/api/events/upcoming")
 
       if (!res.ok) throw new Error("Failed to fetch events")
 

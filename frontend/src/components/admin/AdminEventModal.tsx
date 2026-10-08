@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 interface EventData{
 id?:number
 eventName:string
@@ -64,7 +62,7 @@ eventDateTime
 
 if(event?.id){
 
-await fetch(`${API_BASE}/api/admin/events/${event.id}`,{
+await fetch(`/api/admin/events/${event.id}`,{
 method:"PUT",
 credentials:"include",
 headers:{
@@ -75,7 +73,7 @@ body:JSON.stringify(payload)
 
 }else{
 
-await fetch(`${API_BASE}/api/admin/events`,{
+await fetch(`/api/admin/events`,{
 method:"POST",
 credentials:"include",
 headers:{

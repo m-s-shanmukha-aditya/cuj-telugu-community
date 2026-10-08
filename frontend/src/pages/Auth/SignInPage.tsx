@@ -8,8 +8,6 @@ import { Label } from "@/components/ui/label"
 import { toast } from "sonner"
 import { useAuth } from "@/contexts/AuthContext"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 export default function SignInPage(){
 
     useEffect(()=>{
@@ -42,7 +40,7 @@ const form = new URLSearchParams()
 form.append("username",username)
 form.append("password",password)
 
-const res = await fetch(`${API_BASE}/login`,{
+const res = await fetch(`/login`,{
 method:"POST",
 body:form,
 credentials:"include"

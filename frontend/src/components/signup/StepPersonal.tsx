@@ -2,8 +2,6 @@ import { useEffect, useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 const districts:any = {
 
 "Andhra Pradesh":[
@@ -57,7 +55,7 @@ try{
 setChecking(true)
 
 const res = await fetch(
-`${API_BASE}/auth/check-username?username=${formData.userName}`
+`/auth/check-username?username=${formData.userName}`
 )
 
 const data = await res.json()

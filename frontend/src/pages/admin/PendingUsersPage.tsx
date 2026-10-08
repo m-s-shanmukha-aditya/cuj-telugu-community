@@ -4,8 +4,6 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 export default function PendingUsersPage(){
 
 const [users,setUsers] = useState<any[]>([])
@@ -15,7 +13,7 @@ async function fetchUsers(){
 
 try{
 
-const res = await fetch(`${API_BASE}/api/admin/users/pending?page=0&size=10`,{
+const res = await fetch(`/api/admin/users/pending?page=0&size=10`,{
 credentials:"include"
 })
 
@@ -43,7 +41,7 @@ async function approveUser(id:number){
 
 try{
 
-await fetch(`${API_BASE}/api/admin/users/${id}/approve`,{
+await fetch(`/api/admin/users/${id}/approve`,{
 method:"PATCH",
 credentials:"include"
 })
@@ -64,7 +62,7 @@ async function rejectUser(id:number){
 
 try{
 
-await fetch(`${API_BASE}/api/admin/users/${id}/reject`,{
+await fetch(`/api/admin/users/${id}/reject`,{
 method:"PATCH",
 credentials:"include"
 })

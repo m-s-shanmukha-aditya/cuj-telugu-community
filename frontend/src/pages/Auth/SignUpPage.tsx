@@ -11,8 +11,6 @@ import StepProfessor from "@/components/signup/StepProfessor"
 
 type Step = 1 | 2 | 3
 
-const API_BASE = import.meta.env.VITE_API_URL
-
 export default function SignUpPage() {
 
 useEffect(()=>{
@@ -215,7 +213,7 @@ if(photo){
 form.append("file",photo)
 }
 
-const res = await fetch(`${API_BASE}/auth/register`,{
+const res = await fetch(`/auth/register`,{
 method:"POST",
 body:form
 })
